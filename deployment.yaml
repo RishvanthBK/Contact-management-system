@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contact-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: contact-system
+  template:
+    metadata:
+      labels:
+        app: contact-system
+    spec:
+      containers:
+      - name: contact-system
+        image: contact-system:latest
+        ports:
+        - containerPort: 8080
